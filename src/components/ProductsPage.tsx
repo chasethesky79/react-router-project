@@ -2,7 +2,7 @@ import { IProductsComponentProps } from "../models/product-model";
 import { PageContainer, ProductListWrapper, ProductListItemWrapper, Alert } from '../styled-components/styled-components';
 import { withDataFetching } from './withDataFetching';
 
-const ProductsComponent: React.FC<IProductsComponentProps> = ({ data, loading, error}: IProductsComponentProps) => {
+const ProductsComponent: React.FC<IProductsComponentProps> = ({ data, loading, error }: IProductsComponentProps) => {
    return (
        <>
           {( loading || error ) && <Alert>{loading ? 'Loading...' : error}</Alert>}
