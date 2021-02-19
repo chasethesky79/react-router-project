@@ -4,7 +4,7 @@ import { IDataSourceProps, IProductsComponentProps } from '../models/product-mod
 export const withDataFetching = (WrappedComponent: React.FC<IProductsComponentProps>) => {
     return ({ dataSource }: IDataSourceProps) => {
         const initialProducts: IProductsComponentProps = {
-            data: [],
+            products: [],
             loading: true,
             error: ''
         }
@@ -15,7 +15,7 @@ export const withDataFetching = (WrappedComponent: React.FC<IProductsComponentPr
                 const transactionsData = await fetch(dataSource);
                 const result = await transactionsData.json();
                 if (result) {
-                    setProducts({...initialProducts, data: result, loading: false })
+                    setProducts({...initialProducts, products: result, loading: false })
                 }
             } catch(error) {
                 const { message } = error;

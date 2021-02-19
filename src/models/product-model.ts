@@ -5,15 +5,24 @@ export interface IProduct {
     price: number;
 }
 
-export interface IState {
+type IProducts = {
     products: IProduct[]
 }
 
-export interface IProductsComponentProps {
-    data: IProduct[],
-    loading: boolean;
-    error: string
+type IProductItem = {
+    product: IProduct;
 }
+
+type IErrorInfo = {
+    loading: boolean;
+    error: string;
+}
+
+export type IProductsComponentProps = IProducts & IErrorInfo;
+
+export type IProductComponentProps = IProductItem & IErrorInfo;
+
+export type IProductDataFetchComponent = React.FC<IProductsComponentProps> | React.FC<IProductComponentProps>
 
 export interface IDataSourceProps {
     dataSource: string;
