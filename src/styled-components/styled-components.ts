@@ -28,3 +28,20 @@ padding: 0px;
 export const ProductListItemWrapper = styled.li`
 padding: 5px;
 `
+
+export const HeaderWrapper = styled.header`
+text-align: center;
+background-color: #222;
+height: 160px;
+padding: 20px;
+color: white;
+`
+
+export const ImageWrapper = styled.img`
+animation: header-logo-spin infinite 20s linear;
+height: 80px;
+`
+
+export const HeaderTitle = styled.h1`
+font-size: 1.5em;
+`
