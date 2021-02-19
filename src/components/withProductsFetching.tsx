@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { IDataSourceProps, IProductsComponentProps } from '../models/product-model';
 
-export const withDataFetching = (WrappedComponent: React.FC<IProductsComponentProps>) => {
+export const withProductsFetching = (WrappedComponent: React.FC<IProductsComponentProps>) => {
     return ({ dataSource }: IDataSourceProps) => {
         const initialProducts: IProductsComponentProps = {
             products: [],

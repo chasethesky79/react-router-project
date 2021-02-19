@@ -1,6 +1,6 @@
 import { IProductsComponentProps } from "../models/product-model";
 import { PageContainer, ProductListWrapper, ProductListItemWrapper, Alert } from '../styled-components/styled-components';
-import { withDataFetching } from './withDataFetching';
+import { withProductsFetching } from './withProductsFetching';
 
 const ProductsComponent: React.FC<IProductsComponentProps> = ({ products, loading, error }: IProductsComponentProps) => {
    return (
@@ -18,4 +18,4 @@ const ProductsComponent: React.FC<IProductsComponentProps> = ({ products, loadin
    )
 }
 
-export default withDataFetching(ProductsComponent);
+export default withProductsFetching(ProductsComponent);
