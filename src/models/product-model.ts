@@ -6,11 +6,11 @@ export interface IProduct {
 }
 
 type IProducts = {
-    products: IProduct[]
+    data: IProduct[]
 }
 
 type IProductItem = {
-    product: IProduct;
+    data: IProduct;
 }
 
 type IErrorInfo = {
@@ -26,4 +26,5 @@ export type IProductDataFetchComponent = React.FC<IProductsComponentProps> | Rea
 
 export interface IDataSourceProps {
     dataSource: string;
+    productId?: string
 }
