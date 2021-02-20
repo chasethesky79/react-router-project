@@ -8,3 +8,8 @@ margin-left: 7px;
 .header-link-active {
     border-bottom: blue solid 2px;
 }
+
+.products-link {
+    display: flex;
+    justify-content: center;
+}

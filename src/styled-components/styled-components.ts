@@ -32,7 +32,7 @@ padding: 5px;
 export const HeaderWrapper = styled.header`
 text-align: center;
 background-color: #222;
-height: 160px;
+height: 170px;
 padding: 20px;
 color: white;
 `
