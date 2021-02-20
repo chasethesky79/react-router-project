@@ -10,8 +10,8 @@ const Routes: React.FC<{}> = () => {
         <Router>
             <div>
                 <Header/>
-                <Route path='/products' component={ProductsComponentWrapper}/>
-                <Route path='/product' component={ProductDetailsComponentWrapper}/>
+                <Route path='/products' exact={true} component={ProductsComponentWrapper}/>
+                <Route path='/products/:id' component={ProductDetailsComponentWrapper}/>
                 <Route path='/admin' component={AdminPage}/>
             </div>
         </Router>
