@@ -13,7 +13,7 @@ const ProductsComponentWrapper: React.FunctionComponent<RouteComponentProps> = p
           { searchTxt ? 
             <>
               <ProductsPage dataSource='../../assets/data.json' search={searchTxt}/>
-            </> : <MessageNotificationWrapper>Invalid search text please go back to products page and try search again</MessageNotificationWrapper>
+            </> : <MessageNotificationWrapper>Invalid search key please go back to products page and try search again</MessageNotificationWrapper>
           }
          </>
       );
