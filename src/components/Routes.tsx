@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import { AdminPage } from './AdminPage';
 import { Header } from './Header';
 import ProductsComponentWrapper from './ProductsComponentWrapper';
@@ -12,6 +12,7 @@ const Routes: React.FC<{}> = () => {
             <div>
                 <Header/>
                 <Switch>
+                    <Redirect exact={true} from='/' to='/products'/>
                     <Route path='/products' exact={true} component={ProductsComponentWrapper}/>
                     <Route path='/products/:id' component={ProductDetailsComponentWrapper}/>
                     <Route path='/admin' component={AdminPage}/>
