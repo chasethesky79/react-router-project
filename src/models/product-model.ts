@@ -28,7 +28,10 @@ export type IProductComponentProps = IProductInfo & IErrorInfo;
 
 export type IProductDataFetchComponent = React.FC<IProductsComponentProps> | React.FC<IProductComponentProps>
 
-export interface IDataSourceProps {
+export type IProductsSearchProps = {
+    search: string
+}
+export type IDataSourceProps = {
     dataSource: string
 }
 
