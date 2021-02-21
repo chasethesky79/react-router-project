@@ -5,8 +5,11 @@ import { Header } from './Header';
 import ProductsComponentWrapper from './ProductsComponentWrapper';
 import ProductDetailsComponentWrapper from './ProductDetailsComponentWrapper';
 import { NotFoundPageComponent } from './NotFoundPage';
+import { useState } from 'react';
+import { LoginPage } from './LoginPage';
 
 const Routes: React.FC<{}> = () => {
+    const [loggedIn, setLoggedIn] = useState(false);
     return (
         <Router>
             <div>
@@ -15,7 +18,10 @@ const Routes: React.FC<{}> = () => {
                     <Redirect exact={true} from='/' to='/products'/>
                     <Route path='/products' exact={true} component={ProductsComponentWrapper}/>
                     <Route path='/products/:id' component={ProductDetailsComponentWrapper}/>
-                    <Route path='/admin' component={AdminPage}/>
+                    <Route path='/login' component={LoginPage}/>
+                    <Route path='/admin'>
+                        {loggedIn ? <AdminPage/> : <Redirect to='/login'/>}
+                    </Route>
                     <Route component={NotFoundPageComponent}/>
                 </Switch>
             </div>
