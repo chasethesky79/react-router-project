@@ -46,7 +46,7 @@ export const HeaderTitle = styled.h1`
 font-size: 1.5em;
 `
 
-export const NotFoundPageWrapper = styled.h3`
+export const MessageNotificationWrapper = styled.h3`
 display: flex;
 justify-content: center;
 margin-top: 100px;
