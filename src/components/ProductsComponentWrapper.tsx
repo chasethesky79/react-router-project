@@ -9,13 +9,7 @@ const ProductsComponentWrapper: React.FunctionComponent<RouteComponentProps> = p
       const queryParams = QueryString.parse(search);
       const searchTxt = queryParams.search as string;
       return (
-         <>
-          { searchTxt ? 
-            <>
-              <ProductsPage dataSource='../../assets/data.json' search={searchTxt}/>
-            </> : <MessageNotificationWrapper>Invalid search key please go back to products page and try search again</MessageNotificationWrapper>
-          }
-         </>
+          <ProductsPage dataSource='../../assets/data.json' search={searchTxt}/>            
       );
     }
 
