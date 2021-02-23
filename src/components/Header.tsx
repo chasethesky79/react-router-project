@@ -21,7 +21,6 @@ const Header: React.FC<RouteComponentProps> = (props) => {
     const handleOnKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
         e.preventDefault();
         if (e.key === 'Enter') {
-            // const { target: { value }} = e;
             props.history.push(`/products?search=${search}`);
         }
     }
