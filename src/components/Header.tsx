@@ -5,42 +5,19 @@ import '../styles/Header.css';
 import { HeaderWrapper, ImageWrapper, HeaderTitle } from '../styled-components/styled-components';
 import { getSearchText } from '../util/search-utils';
 import { useState, useEffect } from 'react';
-import { SSL_OP_NETSCAPE_REUSE_CIPHER_CHANGE_BUG } from 'constants';
-
+import { SearchFieldProps } from '../models/product-model';
+import { Searchbox } from './SearchBox';
 const Header: React.FC<RouteComponentProps> = (props) => {
-    const searchTxt = getSearchText(props);
-    const [search, setSearch] = useState('');
-    useEffect(() => {
-        setSearch(searchTxt);
-    })
-
-    const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
-        event.preventDefault();
-        const { target: { value }} = event;
-        setSearch(value)
-    }
-
-    const handleOnKeyDown = (e: React.KeyboardEvent<HTMLInputElement>): void => {
-        e.preventDefault();
-        if (e.key === 'Enter') {
-            const newValue = (e.target as HTMLInputElement).value
-            if (newValue !== search) {
-                setSearch(newValue);
-            }
-            props.history.push(`/products?search=${search}`);
-        }
-    }
+    const searchText = getSearchText(props);
+    const searchFieldProps: SearchFieldProps = {
+      searchText,
+      props
+    };
         
     return (
         <HeaderWrapper>
           <div className='search-container'>
-                <input 
-                    type='text'
-                    value={search}
-                    placeholder='search'      
-                    onKeyDown={handleOnKeyDown}
-                    onChange={handleOnChange}
-                /> 
+            <Searchbox {...searchFieldProps}/>
           </div>
           <ImageWrapper src={logo} alt="logo"/>
           <HeaderTitle>React Shop</HeaderTitle>
