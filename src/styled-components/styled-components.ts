@@ -51,3 +51,13 @@ display: flex;
 justify-content: center;
 margin-top: 100px;
 `
+
+export const NoListStyleWrapper = styled.ul`
+list-style: none;
+margin: 0px 0px 20px 0px;
+padding: 0px;
+`
+export const HorizontalListElementWrapper = styled.li`
+display: inline-block;
+padding: 10px;
+`

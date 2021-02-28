@@ -9,7 +9,7 @@ import { useState } from 'react';
 import { LoginPage } from './LoginPage';
 
 const Routes: React.FC<{}> = () => {
-    const [loggedIn] = useState(false);
+    const [loggedIn] = useState(true);
     return (
         <Router>
             <div>
