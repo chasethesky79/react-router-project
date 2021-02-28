@@ -4,6 +4,7 @@ import { HorizontalListElementWrapper, NoListStyleWrapper, PageContainer } from 
 import '../styles/Header.css';
 import { Route } from 'react-router-dom';
 import { AdminUsersWrapper } from "./AdminUsersWrapper";
+import { AdminProducts } from "./AdminProducts";
 
 export const adminUsersData: IUser[] = [
     {
@@ -36,6 +37,7 @@ export const AdminPage: React.FC<{}> = () => {
                 </HorizontalListElementWrapper>
             </NoListStyleWrapper>
             <Route path={`/admin/users`} component={AdminUsersWrapper}/>
+            <Route path={`/admin/products`} component={AdminProducts}/>
         </PageContainer>
     )
 }
