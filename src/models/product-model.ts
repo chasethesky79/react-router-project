@@ -39,5 +39,5 @@ export type IProductDetailsPageProps = RouteComponentProps<{ id: string }>
 
 export type SearchFieldProps = {
     searchText: string;
-    props: RouteComponentProps
+    history: History
 }

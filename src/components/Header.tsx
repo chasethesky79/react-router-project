@@ -4,14 +4,15 @@ import logo from '../../src/logo.svg';
 import '../styles/Header.css';
 import { HeaderWrapper, ImageWrapper, HeaderTitle } from '../styled-components/styled-components';
 import { getSearchText } from '../util/search-utils';
-import { useState, useEffect } from 'react';
+import { createBrowserHistory } from 'history';
 import { SearchFieldProps } from '../models/product-model';
 import { Searchbox } from './SearchBox';
 const Header: React.FC<RouteComponentProps> = (props) => {
     const searchText = getSearchText(props);
+    const history = createBrowserHistory({ forceRefresh: true }) as any;
     const searchFieldProps: SearchFieldProps = {
       searchText,
-      props
+      history
     };
         
     return (

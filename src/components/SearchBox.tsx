@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { SearchFieldProps } from '../models/product-model';
 import ProductsPage from './ProductsPage';
 
-export const Searchbox: React.FC<SearchFieldProps> = ({ searchText, props }: SearchFieldProps) => {
+export const Searchbox: React.FC<SearchFieldProps> = ({ searchText, history }: SearchFieldProps) => {
     const [search, setSearch] = useState(searchText);
     const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
         const { target: { value }} = event;
@@ -11,7 +11,7 @@ export const Searchbox: React.FC<SearchFieldProps> = ({ searchText, props }: Sea
 
     const handleOnKeyDown = (e: React.KeyboardEvent<HTMLInputElement>): void => {
         if (e.key === 'Enter') {
-          props.history.push(`/products?search=${search}`)
+          (history as any).push(`/products?search=${search}`)
         }
     }
     return (
