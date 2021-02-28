@@ -4,7 +4,7 @@ import ProductDetailsPage from './ProductDetailsPage';
 
 const ProductDetailsComponentWrapper: React.FC<IProductDetailsPageProps>  = ({ match: { params: { id: productId }} }: IProductDetailsPageProps) => {
   const dataSource = '../../assets/data.json';
-  const initialState: IProductComponentProps = {
+  const productState: IProductComponentProps = {
       product: { 
         id: -1,
         name: '',
@@ -15,7 +15,7 @@ const ProductDetailsComponentWrapper: React.FC<IProductDetailsPageProps>  = ({ m
       loading: false,
       added: false
   }
-  const [product, setProduct] = useState(initialState);
+  const [product, setProductState] = useState(productState);
   useEffect(() => {
     async function fetchData() {
     try {
@@ -23,11 +23,11 @@ const ProductDetailsComponentWrapper: React.FC<IProductDetailsPageProps>  = ({ m
         const data = await transactionsData.json();
         if (data) {
             const product = data.find(({ id }: IProduct) => id === Number(productId));
-            setProduct({...initialState, ...{ product }})
+            setProductState({...productState, ...{ product }})
         }
     } catch(error) {
         const { message } = error;
-        setProduct({...initialState, error: message })
+        setProductState({...productState, error: message })
     }
  } fetchData();     
  }, []);

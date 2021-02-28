@@ -4,18 +4,20 @@ import  NumberFormat from 'react-number-format';
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Prompt } from 'react-router-dom';
 import '../styles/Header.css';
 
 const ProductComponent: React.FC<IProductComponentProps> = ({ product, loading, error, added }: IProductComponentProps) => {
-   const [initialState, setProduct] = useState({ product, loading, error, added });
+   const [productState, setProductState] = useState({ product, loading, error, added });
    const handleAddClick = () => {
-     setProduct({ ...initialState, added: true })
+     setProductState({ ...productState, added: true })
    }
+   const navAwayMessage = () => 'Are you sure you want to leave without buying this product?';
    return (
        <>
         {( loading || error ) && <Alert>{loading ? 'Loading...' : error}</Alert>}
         <PageContainer>
+            <Prompt when={!productState.added} message={navAwayMessage}/>
            { product ? 
             <>
               <h1>{product.name}</h1>
