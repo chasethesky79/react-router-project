@@ -54,7 +54,7 @@ margin-top: 100px;
 
 export const NoListStyleWrapper = styled.ul`
 list-style: none;
-margin: 0px 0px 20px 0px;
+margin: 0px 0px 10px 0px;
 padding: 0px;
 `
 export const HorizontalListElementWrapper = styled.li`

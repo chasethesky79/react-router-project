@@ -1,0 +1,1 @@
+export const AdminProducts: React.FC<{}> = () => <div>Some options to administer products</div>
