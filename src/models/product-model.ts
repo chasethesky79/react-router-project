@@ -35,7 +35,7 @@ export type IDataSourceProps = {
     dataSource: string
 }
 
-export type IProductDetailsPageProps = RouteComponentProps<{ id: string }>
+export type IDetailsPageProps = RouteComponentProps<{ id: string }>
 
 export type SearchFieldProps = {
     searchText: string;

@@ -1,8 +1,8 @@
-import { IProductComponentProps, IProductDetailsPageProps, IProduct } from "../models/product-model";
+import { IProductComponentProps, IDetailsPageProps, IProduct } from "../models/product-model";
 import React, { useState, useEffect } from 'react'
 import ProductDetailsPage from './ProductDetailsPage';
 
-const ProductDetailsComponentWrapper: React.FC<IProductDetailsPageProps>  = ({ match: { params: { id: productId }} }: IProductDetailsPageProps) => {
+const ProductDetailsComponentWrapper: React.FC<IDetailsPageProps>  = ({ match: { params: { id: productId }} }: IDetailsPageProps) => {
   const dataSource = '../../assets/data.json';
   const productState: IProductComponentProps = {
       product: { 

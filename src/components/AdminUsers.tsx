@@ -1,6 +1,8 @@
 import { NavLink } from "react-router-dom"
 import { IAdminUserProps, IUser } from "../models/user-model";
 import { HorizontalListElementWrapper, NoListStyleWrapper } from "../styled-components/styled-components";
+import { Route } from 'react-router-dom';
+import { AdminUser } from "./AdminUser";
 
 export const AdminUsers: React.FC<IAdminUserProps> = ({ users }: IAdminUserProps) => {
     return (
@@ -12,6 +14,7 @@ export const AdminUsers: React.FC<IAdminUserProps> = ({ users }: IAdminUserProps
                     </HorizontalListElementWrapper>)
                 }
             </NoListStyleWrapper>
+            <Route path={`/admin/users/:id`} component={AdminUser}/>
         </div>
     )
 }

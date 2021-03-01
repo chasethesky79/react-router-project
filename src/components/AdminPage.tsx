@@ -6,24 +6,6 @@ import { Route } from 'react-router-dom';
 import { AdminUsersWrapper } from "./AdminUsersWrapper";
 import { AdminProducts } from "./AdminProducts";
 
-export const adminUsersData: IUser[] = [
-    {
-        id: 1,
-        name: 'Fred',
-        isAdmin: true
-    },
-    {
-        id: 2,
-        name: 'Bob',
-        isAdmin: false
-    },
-    {
-        id: 3,
-        name: 'Jane',
-        isAdmin: true
-    },
-]
-
 export const AdminPage: React.FC<{}> = () => {
     return (
         <PageContainer>
