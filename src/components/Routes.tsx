@@ -7,6 +7,8 @@ import ProductDetailsComponentWrapper from './ProductDetailsComponentWrapper';
 import { NotFoundPageComponent } from './NotFoundPage';
 import { useState } from 'react';
 import { LoginPage } from './LoginPage';
+import { Suspense } from 'react';
+import { PageContainer } from '../styled-components/styled-components';
 
 const Routes: React.FC<{}> = () => {
     const [loggedIn] = useState(true);
@@ -20,7 +22,7 @@ const Routes: React.FC<{}> = () => {
                     <Route path='/products/:id' component={ProductDetailsComponentWrapper}/>
                     <Route path='/login' component={LoginPage}/>
                     <Route path='/admin'>
-                        {loggedIn ? <AdminPage/> : <Redirect to='/login'/>}
+                        {loggedIn ? (<Suspense fallback={<PageContainer>Loading...</PageContainer>}><AdminPage/></Suspense>) : <Redirect to='/login'/>}
                     </Route>
                     <Route component={NotFoundPageComponent}/>
                 </Switch>
